@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --nocobi-navy: #091d2e;
+  --nocobi-gold: #e7b630;
+  --nocobi-blue: #33a0ff;
+  --nocobi-blue-dark: #2779c2;
+  --nocobi-cream: #fae7c8;
+  --nocobi-blue-gray: #bbcad8;
+  --nocobi-text: #123a5c;
+  --nocobi-white: #f8f9fa;
+  --nocobi-shadow: rgba(9, 29, 46, 0.14);
+}
+
+@theme inline {
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-open-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 85% 10%, rgba(51, 160, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 5% 85%, rgba(231, 182, 48, 0.18), transparent 35%),
+    linear-gradient(180deg, #f8f9fa 0%, #eef2f6 100%);
+  color: var(--nocobi-text);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.nocobi-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.nocobi-shell::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto auto -15%;
+  width: 42rem;
+  height: 42rem;
+  background: radial-gradient(circle, rgba(9, 29, 46, 0.16) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.nocobi-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -25% auto;
+  width: 34rem;
+  height: 34rem;
+  background: radial-gradient(circle, rgba(231, 182, 48, 0.2) 0%, transparent 58%);
+  pointer-events: none;
+}
+
+@keyframes riseFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: riseFade 0.55s ease-out both;
+}
+
+.reveal-delay {
+  animation: riseFade 0.7s ease-out both;
+}
