@@ -21,7 +21,6 @@ interface FormData {
   q8: string;
   q9: string;
   q10: string;
-  q11: string;
   lgpd_contato: boolean;
   lgpd_dados: boolean;
 }
@@ -29,7 +28,7 @@ interface FormData {
 const INITIAL: FormData = {
   nome: '', email: '', empresa: '', cargo: '', setor: '', regiao: '',
   q1: '', q2: [], q3: '', q4: '', q5: '', q6: '',
-  q7: '', q8: '', q9: '', q10: '', q11: '',
+  q7: '', q8: '', q9: '', q10: '',
   lgpd_contato: false, lgpd_dados: false,
 };
 
@@ -437,7 +436,7 @@ function Step4({ d, u }: { d: FormData; u: (k: keyof FormData, v: string) => voi
           <Textarea value={d.q8} onChange={v => u('q8', v)} placeholder="Descreva o impacto financeiro e operacional para a empresa..." required />
         </div>
         <div>
-          <Label required>9. Se eu trouxesse uma solução que resolve a sua principal dor em compliance, você teria autonomia para contratar?</Label>
+          <Label required>9. Se eu trouxesse uma solução que resolve sua dor central por R$ 999/mês, você teria autonomia para contratar?</Label>
           <div className="mt-3">
             <RadioGroup options={AUTONOMIA} value={d.q9} onChange={v => u('q9', v)} />
           </div>
@@ -453,7 +452,7 @@ function Step5({ d, u }: { d: FormData; u: (k: keyof FormData, v: string | boole
     <>
       <SectionTitle
         title="Próximos passos"
-        subtitle="Quase lá! Vamos entender o interesse em piloto e referências."
+        subtitle="Quase lá! Vamos entender o interesse em piloto."
       />
       <div className="flex flex-col gap-6">
         <div>
@@ -461,16 +460,6 @@ function Step5({ d, u }: { d: FormData; u: (k: keyof FormData, v: string | boole
           <div className="mt-3">
             <RadioGroup options={PILOTO} value={d.q10} onChange={v => u('q10', v as string)} />
           </div>
-        </div>
-        <div>
-          <Label required>11. Quem mais na sua rede está vivendo dores parecidas? Topa fazer uma introdução?</Label>
-          <Textarea
-            value={d.q11}
-            onChange={v => u('q11', v as string)}
-            placeholder="Nome, empresa ou LinkedIn de colegas que vivem os mesmos desafios..."
-            rows={3}
-            required
-          />
         </div>
 
         {/* LGPD */}
@@ -532,7 +521,7 @@ export default function Home() {
     if (step === 2) return !!(data.q3 && data.q4 && data.q5);
     if (step === 3) return !!(data.q6 && data.q7);
     if (step === 4) return !!(data.q8 && data.q9);
-    if (step === 5) return !!(data.q10 && data.q11 && data.lgpd_contato && data.lgpd_dados);
+    if (step === 5) return !!(data.q10 && data.lgpd_contato && data.lgpd_dados);
     return true;
   };
 
@@ -573,7 +562,6 @@ export default function Home() {
             q8: data.q8,
             q9: data.q9,
             q10: data.q10,
-            q11: data.q11,
             lgpd_contato: data.lgpd_contato,
             lgpd_dados: data.lgpd_dados,
             honeypot: '',
@@ -692,7 +680,7 @@ export default function Home() {
             Seus dados não serão compartilhados com terceiros.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-            {['11 perguntas abertas', 'Totalmente anônimo', 'Resultados compartilhados'].map(t => (
+            {['10 perguntas', 'Totalmente anônimo', 'Resultados compartilhados'].map(t => (
               <span key={t} className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: C.blueGray, fontFamily: 'var(--font-open-sans)' }}>
                 <span style={{ color: C.gold }}>✓</span> {t}
               </span>

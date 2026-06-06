@@ -19,7 +19,6 @@ export const submissionSchema = z.object({
   q8: z.string().min(1).max(8000),
   q9: z.string().min(1).max(8000),
   q10: z.string().min(1).max(1000),
-  q11: z.string().min(1).max(1000),
   lgpd_contato: z.literal(true),
   lgpd_dados: z.literal(true),
   honeypot: z.string().max(100).default(''),

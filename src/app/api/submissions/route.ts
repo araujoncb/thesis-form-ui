@@ -56,7 +56,6 @@ export async function POST(request: NextRequest) {
       q8: parsed.data.q8,
       q9: parsed.data.q9,
       q10: parsed.data.q10,
-      q11: parsed.data.q11,
     },
     consent_contact: parsed.data.lgpd_contato,
     consent_data: parsed.data.lgpd_dados,
