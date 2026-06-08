@@ -13,8 +13,13 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Pesquisa de Compliance Ambiental",
+  title: "Pesquisa de Compliance Ambiental | nocobi",
   description: "Formulário público para pesquisa de mercado da Nocobi.",
+  icons: {
+    icon: "/logo%20nocobi%20-%20bw.png",
+    shortcut: "/logo%20nocobi%20-%20bw.png",
+    apple: "/logo%20nocobi%20-%20bw.png",
+  },
 };
 
 export default function RootLayout({
