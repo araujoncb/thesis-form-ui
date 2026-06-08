@@ -32,7 +32,7 @@ const INITIAL: FormData = {
   lgpd_contato: false, lgpd_dados: false,
 };
 
-const SETORES = ['Química', 'Mineração', 'Alimentos e Bebidas', 'Papel e Celulose', 'Energia', 'Saneamento', 'Outro'];
+const SETORES = ['Química', 'Mineração', 'Alimentos e Bebidas', 'Papel e Celulose', 'Energia', 'Saneamento', 'Fármacos/Cosméticos', 'Outro'];
 const REGIOES = ['SP', 'MG', 'RJ', 'ES', 'PR', 'SC', 'RS', 'MT', 'MS', 'GO', 'DF', 'BA', 'PA', 'AM', 'Outro'];
 const CARGOS = ['Gestor(a) Ambiental', 'Gerente de EHS / ESG', 'Diretor(a)', 'CEO / Sócio', 'Consultor(a)', 'Outro'];
 const LICENCAS = ['LP/LI/LO', 'CADRI', 'RAPP / CTF', 'MTR / SIGOR', 'Outorga de Recursos Hídricos', 'GHG / Inventário de Emissões', 'IFRS S1/S2', 'Outro'];
